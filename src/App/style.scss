@@ -1,0 +1,144 @@
+#root {
+  --main-blue: #246BCE;
+}
+
+button {
+  appearance: none;
+  outline: none;
+  border: none;
+  box-shadow: none;
+  background: 0;
+}
+
+input {
+  appearance: none;
+  outline: none;
+  border: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+// html, body, #root {
+//  height: 100%;
+// }
+
+body {
+  margin: 0;
+  background-color: aliceblue;
+}
+
+.Main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 1800px;
+  height: 100%;
+  margin-inline: auto;
+  padding: 20px 0;
+  
+  nav {
+    width: 100%;
+    min-width: 100%;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    font-family: 'Inter';
+    font-size: 1rem;
+    font-weight: 400;
+
+    & > * {
+      margin-left: 50px;
+    }
+
+    .main-page {
+      color: #246BCE;
+    }
+
+    .sign-in {
+      font-family: 'Inter';
+      font-size: 1rem;
+      font-weight: 400;
+      width: 100px;
+      height: 50px;
+      background-color: #246BCE;
+      color: #FFF;
+      border-radius: 0.5rem;
+      cursor: pointer;
+    }
+  }
+
+  h1 {
+    font-family: 'Montserrat';
+    font-size: 3rem;
+    font-weight: 600;
+    text-align: center;
+    margin-top: 50px;
+  }
+
+  input {
+    display: block;
+    width: 0;
+    height: 0;
+    margin: 0;
+    background: transparent;
+  }
+
+  .import-audio {
+    width: 280px;
+    aspect-ratio: 1/1;
+    color: #FFF;
+    font-family: 'Inter';
+    font-size: 2rem;
+    font-weight: 600;
+    background-color: #E63946;
+    border-radius: 50%;
+    text-align: center;
+    cursor: pointer;
+
+  }
+
+  .conspect-config {
+    width: 100%;
+    height: 100%;
+    margin-top: 50px;
+    font-family: 'Inter';
+    font-weight: 400;
+
+    h2 {
+      text-align: center;
+      font-family: 'Inter';
+      font-weight: 400;
+      font-size: 40px;
+    }
+
+    .configs {
+      width: 100%;
+      min-height: 185px;
+      height: 100%;
+      display: flex;
+      justify-content: space-between;
+
+      .config {
+        min-width: 550px;
+        padding: 20px 0;
+        font-size: 1.5rem;
+        background-color: #E3F2FD;
+
+        .header {
+          font-weight: 500;
+          text-align: center;
+        }
+
+        .desc {
+          height: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+      }
+    }
+  }
+}
+
