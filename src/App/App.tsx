@@ -1,21 +1,47 @@
-import React, { useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
+
+import { useDispatch, useSelector } from 'react-redux';
+import { getCatsFetch } from '../Store/catSlice';
+import { RootState } from '../Store/store';
 
 // import './style.scss;'
 import './test.scss';
+import Cat from './components/Cat';
 
 const App = () => {
-  const inputRef = useRef<HTMLInputElement>(null);
+  // const inputRef = useRef<HTMLInputElement>(null);
 
-  const handleButtonClick = () => {
-    if (!inputRef.current) {
-      return;
-    }
+  // const handleButtonClick = () => {
+  //   if (!inputRef.current) {
+  //     return;
+  //   }
 
-    inputRef.current.click();
-  }
+  //   inputRef.current.click();
+  // }
+  const cats = useSelector((state: RootState) => state.cats.cats);
+  const dispatch = useDispatch();
 
+  const [isShowMore, setIsShowMore] = useState(false);
+
+  useEffect(() => {
+    dispatch(getCatsFetch());
+  }, [dispatch]);
+  console.log(cats);
+  
   return (
-    <div></div>
+    <div className='App'>
+      <h1>CAT SPECIES GALLERY</h1>
+      <p>Images of different species pf cats. Lots of cats for your viewing pleasure.</p>
+      <hr />
+
+      <div className='Gallery'>
+        {!isShowMore 
+        ? cats.slice(0, 5).map(cat => <Cat cat={cat} />)
+        : cats.map(cat => <Cat cat={cat} />)}
+      </div>
+
+      <button onClick={() => setIsShowMore(prev => !prev)}>{!isShowMore ? "VIEW MORE CATS" : "VIEW LESS CATS"}</button>
+    </div>
   );
 }
 

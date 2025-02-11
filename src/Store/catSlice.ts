@@ -3,19 +3,20 @@ import { createSlice } from "@reduxjs/toolkit";
 export type catState = {
   cats: any[],
   isLoading: boolean;
+  error: string | null,
 }
 
 const initialState: catState = {
   cats: [],
   isLoading: false,
+  error: null,
 }
-
 
 export const catSlice = createSlice({
   name: 'cats',
   initialState,
   reducers: {
-    getCatFetch: state => {
+    getCatsFetch: state => {
       state.isLoading = true;
     },
 
@@ -23,12 +24,12 @@ export const catSlice = createSlice({
       state.cats = action.payload;
       state.isLoading = false;
     },
-    getCatsFailure: state => {
+    getCatsFailure: (state, action) => {
+      state.error = action.payload;
       state.isLoading = false;
     }
   }
 });
 
-export const { getCatFetch, getCatsSuccess, getCatsFailure} = catSlice.actions;
-
+export const { getCatsFetch, getCatsSuccess, getCatsFailure} = catSlice.actions;
 export default catSlice.reducer;
