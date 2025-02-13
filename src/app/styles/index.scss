@@ -1,0 +1,68 @@
+#root {
+  --bg-color: #13161D;
+  --secondary-color: #191C24;
+  --main-red-color: #C5073D;
+  --border-radius: 6px;
+  --border-blocks: 10px;
+}
+
+button {
+  appearance: none;
+  outline: none;
+  border: none;
+  box-shadow: none;
+  background: 0;
+  background: none;
+  cursor: pointer;
+}
+
+input {
+  appearance: none;
+  outline: none;
+  border: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  color: #fff;
+  margin: 20px 0;
+  font-family: "Brygada 1918";
+  font-size: 65px;
+  font-weight: 700;
+}
+
+h2 {
+  width: 100%;
+  text-align: center;
+  color: #B0B0B0;
+  margin: 20px 0;
+  margin-top: 100px;
+  font-family: "Brygada 1918";
+  font-size: 60px;
+  font-weight: 700;
+}
+
+h4 {
+  color: var(--main-red-color);
+  margin: 0;
+  font-family: "Jost";
+  font-size: 22px;
+  font-weight: 600;
+}
+
+p {
+  color: #B0B0B0;
+  font-family: "Jost";
+  font-size: 16px;
+  font-weight: 400;
+  margin: 10px 0;
+}

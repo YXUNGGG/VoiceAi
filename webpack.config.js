@@ -2,7 +2,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-  entry: './src/App/index.tsx',
+  entry: './src/app/index.tsx',
   output: {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'dist'),
@@ -28,7 +28,15 @@ module.exports = {
       {
         test: /\.scss$/,  // Добавляем поддержку для CSS файлов
         use: ['style-loader', 'css-loader', 'sass-loader'],
-      },
+      }, {
+        test: /\.(jpg|png|gif|woff2|ttf|svg)/,
+        use: {
+          loader: 'url-loader', // this need file-loader
+          options: {
+          limit: 50000
+          }
+        }
+      }
     ],
   },
   plugins: [

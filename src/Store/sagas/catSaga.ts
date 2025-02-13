@@ -1,5 +1,5 @@
 import { call, put, takeEvery } from "redux-saga/effects";
-import { getCatsSuccess } from "../catSlice";
+import { getCatsSuccess, getCatsFetch } from "../catSlice";
 
 type catJson = {
   weight: {
@@ -80,7 +80,7 @@ function* workGetCatsFetch() {
 }
 
 function* catSaga() {
-  yield takeEvery('cats/getCatsFetch', workGetCatsFetch);
+  yield takeEvery(getCatsFetch, workGetCatsFetch);
 }
 
 export default catSaga;
