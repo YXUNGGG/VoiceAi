@@ -1,5 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const Dotenv = require('dotenv-webpack');
 
 module.exports = {
   entry: './src/app/index.tsx',
@@ -16,7 +17,10 @@ module.exports = {
     hot: true,
   },
   resolve: {
-    extensions: ['.tsx', '.ts', '.js'], // Поддержка расширений для импорта
+    extensions: ['.tsx', '.ts', '.js'],
+    fallback: {
+      "process": require.resolve("process/browser")
+    }
   },
   module: {
     rules: [
@@ -43,5 +47,6 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: './src/index.html', // Шаблон для HTML
     }),
+    new Dotenv(),
   ]
 }

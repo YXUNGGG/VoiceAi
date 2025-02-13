@@ -1,24 +1,21 @@
 import React, { useEffect, useRef, useState } from 'react';
 
 import { useDispatch, useSelector } from 'react-redux';
-import { getCatsFetch } from '../Store/catSlice';
+import { getFetch } from '../Store/catSlice';
 import { RootState } from '../Store/store';
 
 import './styles/index.scss';
 import MainPage from './components/MainPage';
-// import Cat from './components/Cat';
 
 const App = () => {
   // это тест редакса
-  // const cats = useSelector((state: RootState) => state.cats.cats);
-  // const dispatch = useDispatch();
+  const data = useSelector((state: RootState) => state.cats.cats);
+  const dispatch = useDispatch();
 
-  // const [isShowMore, setIsShowMore] = useState(false);
-
-  // useEffect(() => {
-  //   dispatch(getCatsFetch());
-  // }, [dispatch]);
-  // console.log(cats);
+  useEffect(() => {
+    dispatch(getFetch());
+  }, [dispatch]);
+  console.log(data);
   
   return (
     <MainPage />
