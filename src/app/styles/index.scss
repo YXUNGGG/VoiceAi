@@ -2,7 +2,7 @@
   --bg-color: #13161D;
   --secondary-color: #191C24;
   --main-red-color: #C5073D;
-  --border-radius: 6px;
+  --border-radius: 8px;
   --border-blocks: 10px;
 }
 
@@ -27,6 +27,8 @@ input {
 }
 
 body {
+  overflow-x: hidden;
+  position: relative;
   height: 100%;
   margin: 0;
   padding: 0;
@@ -34,9 +36,9 @@ body {
 
 h1 {
   color: #fff;
-  margin: 20px 0;
+  margin-block: 10px 0;
   font-family: "Brygada 1918";
-  font-size: 65px;
+  font-size: 52px;
   font-weight: 700;
 }
 
