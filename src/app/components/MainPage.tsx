@@ -3,16 +3,17 @@ import React from "react";
 import "../styles/MainPage.scss";
 
 import logo from "../assets/main-page/logo.svg";
-import mainDecor from "../assets/main-page/main-decoration.svg";
 import wave from "../assets/main-page/waveform/wave.svg";
 import redwave from "../assets/main-page/waveform/redwave.svg";
 import micro from "../assets/main-page/waveform/micro.svg";
 import redmicro from "../assets/main-page/waveform/redmicro.svg";
 import rectangleBlock from "../assets/main-page/rectangle.png";
 
+import mainDecor from "../assets/main-page/main-decoration.svg";
 import firstDecor from "../assets/main-page/first_decoration.svg"
 import secondDecor from "../assets/main-page/second-decoration.svg"
 import thirdDecor from "../assets/main-page/third-decoration.svg"
+import Button from "./Button";
 
 const MainPage = () => {
   return (
@@ -41,7 +42,7 @@ const MainPage = () => {
           <div className="nav-bar">
             <div>About me</div>
             <div>Pricing plans</div>
-            <button>Sign in</button>
+            <Button text="Sign in" />
           </div>
       </nav>
 
@@ -50,6 +51,7 @@ const MainPage = () => {
 
         <div className="title">
           <h1>Convert audio to text</h1>
+
           <p style={{marginBlock: "0 20px"}}>
             Upload or record your text message and recieve
             customisable conspect message in a minute
@@ -60,11 +62,11 @@ const MainPage = () => {
               <img src={wave} className="bg-wave" alt="pic" />
               <img src={redwave} className="redwave" alt="pic" />
             </div>
+
             <div className="micro">
               <img src={micro} alt="pic" />
               <img src={redmicro} className="redmicro" alt="pic" />
             </div>
-            
           </div>
         </div>
       </div>
@@ -82,7 +84,7 @@ const MainPage = () => {
               Lorem ipsum dolor sit amet, consectetur adipiscing elit,
               sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
             </p>
-            <button>Start now</button>
+            <Button text="Start now"/>
           </div>
       </div>
 
@@ -101,7 +103,6 @@ const MainPage = () => {
               <div className="rank-circle">1</div>
             </div>
             
-
             <div className="block">
               <h4>Second Step</h4>
 
@@ -153,7 +154,7 @@ const MainPage = () => {
                   sint occaecat cupidatat non proident.
                 </p>
 
-                <button>Try it for free</button>
+                <Button text="Try it for free" isFilled={false} />
 
                 <div className="rank-circle">5</div>
               </div>
@@ -195,6 +196,10 @@ const MainPage = () => {
               Fifth option
             </div>
           </div>
+
+            <div className="button-container">
+              <Button isDisabled text="Current plan"/>
+            </div>
         </div>
 
         <div className="price-plan">
@@ -231,6 +236,10 @@ const MainPage = () => {
               Fifth option
             </div>
           </div>
+
+          <div className="button-container">
+            <Button text="Upgrade your plan"/>
+          </div>
         </div>
 
         <div className="price-plan">
@@ -266,6 +275,10 @@ const MainPage = () => {
               <div className="dot" />
               Fifth option
             </div>
+          </div>
+
+          <div className="button-container">
+            <Button text="Upgrade your plan"/>
           </div>
         </div>
       </div>
