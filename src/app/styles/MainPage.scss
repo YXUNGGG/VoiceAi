@@ -15,16 +15,6 @@ body {
   color: white;
 }
 
-button {
-  font-family: "Jost";
-  background-color: var(--main-red-color);
-  border-radius: var(--border-radius);
-  color: #fff;
-  font-size: 15px;
-  font-weight: 500;
-  padding: 7px 32px;
-}
-
 .rank-circle {
   font-weight: 700;
   font-size: 20px;
@@ -56,7 +46,7 @@ button {
   align-items: center;
   cursor: pointer;
   border: 3.5px solid var(--secondary-color);
-  transition: background-color 0.25s, border 0.25s;
+  transition: background-color 0.2s, border 0.2s;
 
   .wave {
     position: relative;
@@ -64,7 +54,7 @@ button {
     align-items: center;
     
     .bg-wave {
-      transition: filter 0.25s;
+      transition: filter 0.2s;
     }
 
     .redwave {
@@ -85,7 +75,7 @@ button {
       top: 0;
       left: 0;
       opacity: 0;
-      transition: opacity 0.25s;
+      transition: opacity 0.2s;
     }
   }
 
@@ -117,10 +107,14 @@ nav {
     width: 100%;
     max-width: 380px;
     align-items: center;
-    cursor: pointer;
 
     div {
       height: min-content;
+      cursor: pointer;
+
+      &:hover {
+        color: #C0C0C0;
+      }
     }
   }
 }
@@ -188,11 +182,7 @@ nav {
         padding: 15px 25px;
       }
 
-      button {
-        margin-block: 10px 4px;
-        background-color: transparent;
-        border: 2px solid var(--main-red-color);
-      }
+      button { margin-block: 10px 4px; }
     }
   }
 }
@@ -200,7 +190,7 @@ nav {
 .plans-container {
   width: 100%;
   font-weight: 500;
-  color: #FFF;
+  color: #b0b0b0;
   @include flex-between;
   gap: 25px;
 
@@ -238,6 +228,7 @@ nav {
 
     .content {
       .option {
+        color: #C0C0C0;
         font-size: 20px;
         margin-top: 20px;
         display: flex;
@@ -257,14 +248,20 @@ nav {
       }
 
       .option.disabled {
-        color: #979797;
+        color: #858585;
 
         .dot {
           background-color: transparent;
-          border: 1px solid var(--main-red-color);
+          border: 1.5px solid #5c5c5c;
         }
       }
     }
+
+    .button-container {
+      display: flex;
+      justify-content: center;
+      margin-top: 30px;
+    } 
   }
 }
 

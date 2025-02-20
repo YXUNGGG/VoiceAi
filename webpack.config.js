@@ -25,12 +25,12 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.tsx?$/, // Тест для TypeScript файлов
+        test: /\.tsx?$/,
         use: 'ts-loader',
         exclude: /node_modules/,
       },
       {
-        test: /\.scss$/,  // Добавляем поддержку для CSS файлов
+        test: /\.scss$/,
         use: ['style-loader', 'css-loader', 'sass-loader'],
       }, {
         test: /\.(jpg|png|gif|woff2|ttf|svg)/,
