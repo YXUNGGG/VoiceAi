@@ -17,6 +17,8 @@ button {
 }
 
 input {
+  font-family: "Jost";
+  font-size: 16px;
   appearance: none;
   outline: none;
   border: none;
@@ -53,6 +55,14 @@ h2 {
   font-weight: 700;
 }
 
+h3 {
+  font-family: "Jost";
+  font-weight: 600;
+  font-size: 45px;
+  margin: 0;
+  color: #FFF;
+}
+
 h4 {
   color: var(--main-red-color);
   margin: 0;
@@ -67,4 +77,8 @@ p {
   font-size: 16px;
   font-weight: 400;
   margin: 10px 0;
+}
+
+.text-red {
+  color: var(--main-red-color);
 }

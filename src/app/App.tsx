@@ -6,6 +6,7 @@ import { RootState } from '../Store/store';
 
 import './styles/index.scss';
 import MainPage from './components/MainPage';
+import Authorize from './components/Authorize';
 
 const App = () => {
   // это тест редакса
@@ -18,7 +19,7 @@ const App = () => {
   console.log(data);
   
   return (
-    <MainPage />
+    <Authorize />
     // <div>
     //   {/* <h1>CAT SPECIES GALLERY</h1>
     //   <p>Images of different species pf cats. Lots of cats for your viewing pleasure.</p>

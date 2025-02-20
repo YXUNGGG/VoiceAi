@@ -204,7 +204,7 @@ const MainPage = () => {
 
         <div className="price-plan">
           <div className="header">
-            <div className="price">V.I.P</div>
+            <div className="text-red">V.I.P</div>
             <span>29$/m</span>
           </div>
 
@@ -244,7 +244,7 @@ const MainPage = () => {
 
         <div className="price-plan">
           <div className="header">
-            <div className="price">Premium</div>
+            <div className="text-red">Premium</div>
             <span>49$/m</span>
           </div>
 
