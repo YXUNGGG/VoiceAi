@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect} from 'react';
 
 import { useDispatch, useSelector } from 'react-redux';
 import { getFetch } from '../Store/catSlice';
@@ -19,20 +19,9 @@ const App = () => {
   console.log(data);
   
   return (
-    <Authorize />
-    // <div>
-    //   {/* <h1>CAT SPECIES GALLERY</h1>
-    //   <p>Images of different species pf cats. Lots of cats for your viewing pleasure.</p>
-    //   <hr />
-
-    //   <div className='Gallery'>
-    //     {!isShowMore 
-    //     ? cats.slice(0, 5).map(cat => <Cat cat={cat} />)
-    //     : cats.map(cat => <Cat cat={cat} />)}
-    //   </div>
-
-    //   <button onClick={() => setIsShowMore(prev => !prev)}>{!isShowMore ? "VIEW MORE CATS" : "VIEW LESS CATS"}</button> */}
-    // </div>
+    // <WelcomePage />
+    // <Authorize />
+    <MainPage />
   );
 }
 

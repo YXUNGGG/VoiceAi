@@ -1,7 +1,8 @@
-#root {
+:root {
   --bg-color: #13161D;
   --secondary-color: #191C24;
   --main-red-color: #C5073D;
+  --main-border-color: #25272E;
   --border-radius: 8px;
   --border-blocks: 10px;
 }
@@ -24,14 +25,31 @@ input {
   border: none;
 }
 
+textarea {
+  width: 100%;
+  font-family: "Jost";
+  background-color: var(--secondary-color);
+  border: none;
+  resize: none;
+  // overflow: hidden;
+
+  &:focus {
+    outline: none;
+  }
+}
+
 * {
   box-sizing: border-box;
 }
 
+html, body, #root {
+  height: 100%;
+}
+
 body {
+  background-color: var(--bg-color);
   overflow-x: hidden;
   position: relative;
-  height: 100%;
   margin: 0;
   padding: 0;
 }

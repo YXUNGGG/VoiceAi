@@ -5,16 +5,23 @@ import { createClassName } from "../utils/createClassName";
 
 type OwnProps = {
   text: string;
+  cssClass?: string;
   isFilled?: boolean;
   isDisabled?: boolean;
+  iconRight?: string;
+  iconLeft?: string;
 }
 
-const Button: React.FC<OwnProps> = ({ text, isFilled = true, isDisabled = false}) => {
+const Button: React.FC<OwnProps> = ({ text, cssClass = "", isFilled = true, isDisabled = false, iconLeft, iconRight}) => {
   return (
     <button 
-      className={createClassName(!isFilled && "transparent", isDisabled && "disabled")}
+      className={createClassName(!isFilled && "transparent", isDisabled && "disabled", cssClass !== "" && cssClass)}
       disabled={isDisabled}
-    >{text}</button>
+    >
+      {iconLeft && <img src={iconLeft} alt="icon" />}
+      {text}
+      {iconRight && <img src={iconRight} alt="icon" />}
+    </button>
   );
 }
 
