@@ -17,6 +17,10 @@ module.exports = {
     hot: true,
   },
   resolve: {
+    alias: {
+      '@': path.resolve(__dirname, 'src'), // Главный алиас
+      '@assets': path.resolve(__dirname, 'src/shared/assets'), // Доп. алиас
+    },
     extensions: ['.tsx', '.ts', '.js'],
     fallback: {
       "process": require.resolve("process/browser")
@@ -28,19 +32,33 @@ module.exports = {
         test: /\.tsx?$/,
         use: 'ts-loader',
         exclude: /node_modules/,
-      },
-      {
+      }, {
         test: /\.scss$/,
         use: ['style-loader', 'css-loader', 'sass-loader'],
       }, {
-        test: /\.(jpg|png|gif|woff2|ttf|svg)/,
-        use: {
-          loader: 'url-loader', // this need file-loader
-          options: {
-          limit: 50000
+        test: /\.svg$/i,
+        oneOf: [
+          // Для импорта как React-компонента (?react)
+          {
+            resourceQuery: /react/,
+            use: ['@svgr/webpack']
+          },
+          // Для всех остальных SVG (img src, CSS)
+          {
+            type: 'asset/resource',
+            generator: {
+              filename: 'assets/images/[name].[hash][ext]'
+            }
           }
-        }
+        ]
       },
+      {
+        test: /\.(png|jpe?g|gif)$/i, // Убрали svg из этого правила
+        type: 'asset/resource',
+        generator: {
+          filename: 'assets/images/[name].[hash][ext]'
+        }
+      }
     ],
   },
   plugins: [

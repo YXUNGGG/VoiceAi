@@ -9,6 +9,6 @@
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true
   },
-  "include": ["src", "./declaration.d.ts"],
+  "include": ["src", "./src/declaration.d.ts"],
   "exclude": ["node_modules"]
 }

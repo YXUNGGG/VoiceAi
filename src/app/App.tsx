@@ -1,27 +1,20 @@
-import React, { useEffect} from 'react';
+import React from "react";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import MainPage from "../pages/main/MainPage";
 
-import { useDispatch, useSelector } from 'react-redux';
-import { getFetch } from '../Store/catSlice';
-import { RootState } from '../Store/store';
-
-import './styles/index.scss';
-import MainPage from './components/MainPage';
-import Authorize from './components/Authorize';
+import "./ui/index.scss";
+import WelcomePage from "../pages/home/WelcomePage";
+import Authorize from "../pages/sign-in-up/Authorize";
 
 const App = () => {
-  // это тест редакса
-  const data = useSelector((state: RootState) => state.cats.cats);
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    dispatch(getFetch());
-  }, [dispatch]);
-  console.log(data);
-  
   return (
-    // <WelcomePage />
-    // <Authorize />
-    <MainPage />
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" Component={MainPage} />
+        {/* <Route path="/welcome" Component={WelcomePage} /> */}
+        {/* <Route path="/authorize" Component={Authorize} /> */}
+      </Routes>
+    </BrowserRouter>
   );
 }
 
