@@ -1,4 +1,4 @@
-import React from "react";
+import React, { HTMLAttributes } from "react";
 import Button from "../../containers/Button/Button";
 import Dropdown from "../../containers/Dropdown/Dropdown";
 import useAnimation from "../../shared/hooks/useAnimation";
@@ -11,11 +11,16 @@ import importIcon from "@assets/main-page/import-icon.svg?react";
 import linkIcon from "@assets/main-page/link.svg?react";
 import { createClassName } from "../../shared/utils/createClassName";
 
-const UserFirstAction = () => {
+type OwnProps = HTMLAttributes<HTMLDivElement> & {
+  isFadeOut: boolean,
+  onVoice: (e: React.MouseEvent<HTMLElement, MouseEvent>) => void
+}
+
+const UserFirstAction: React.FC<OwnProps> = ({onVoice, isFadeOut, onAnimationEnd}) => {
   const {
     containerRef,
     isVisible,
-    isFadeOut,
+    isFadeOut: isDropdownFadeOut,
     eventHandlers,
     handleOpen,
     handleAnimationEnd
@@ -25,21 +30,13 @@ const UserFirstAction = () => {
     initialVsibility: false
   });
 
-  const {
-    handleAnimationEnd: handleBlockAnimationEnd,
-    handleOpen: handleBlockClose,
-    isVisible: isBlockVisible,
-    isFadeOut: isFadeOutBlock
-  } = useAnimation({trigger: "click", initialVsibility: true});
-
-  if (!isBlockVisible) return;
-
   return (
-    <div className={createClassName(
+    <div 
+      onAnimationEnd={onAnimationEnd}
+      className={createClassName(
         "begin-action-block",
-        isFadeOutBlock && "--exit"
-      )} 
-      onAnimationEnd={handleBlockAnimationEnd}
+        isFadeOut && "--exit"
+      )}
     >
       <div className="title">Welcome to the che<span>rr</span>y</div>
       <div className="action-container">
@@ -54,7 +51,7 @@ const UserFirstAction = () => {
             text="Voice"
             IconLeft={audioIcon}
             cssClass="button"
-            onclick={handleBlockClose}
+            onclick={onVoice}
           />
           <div
             ref={containerRef} 
@@ -63,13 +60,13 @@ const UserFirstAction = () => {
             {...eventHandlers}
           >
             <Button
-              text="Input"
+              text="Import"
               IconLeft={importIcon}
               cssClass={`secondary-button button`}
             />
             {isVisible && 
               <Dropdown
-                isOpen={!isFadeOut}
+                isOpen={!isDropdownFadeOut}
                 orientation="column"
               >
                 <Button 

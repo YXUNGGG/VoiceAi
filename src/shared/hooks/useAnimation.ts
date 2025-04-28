@@ -1,13 +1,13 @@
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 
-type UseAnimationOptions<T extends HTMLElement = HTMLElement> = {
+type UseAnimationOptions = {
   trigger?: 'hover' | 'click';
   initialVsibility?: boolean;
   closeOnOutsideClick?: boolean;
 };
 
 const useAnimation = <T extends HTMLElement = HTMLElement>(
-  options: UseAnimationOptions<T> = {}
+  options: UseAnimationOptions = {}
 ) => {
   const {
     trigger= "click",
@@ -45,24 +45,6 @@ const useAnimation = <T extends HTMLElement = HTMLElement>(
       setIsFadeOut(true);
     }
   };
-  
-  // const handleClickOutside = (e: MouseEvent) => {
-  //   if (
-  //     closeOnOutsideClick &&
-  //     containerRef.current &&
-  //     !containerRef.current.contains(e.target as Node)
-  //   ) {
-  //     setIsVisible(false);
-  //     setIsFadeOut(false);
-  //   }
-  // };
-
-  // useEffect(() => {
-  //   document.addEventListener("mousedown", handleClickOutside);
-  //   return () => {
-  //     document.removeEventListener("mousedown", handleClickOutside);
-  //   };
-  // }, [closeOnOutsideClick]);
 
   const eventHandlers = {
     ...(trigger === 'hover' && {

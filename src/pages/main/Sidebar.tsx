@@ -2,6 +2,8 @@ import React from "react";
 import Button from "../../containers/Button/Button";
 import ConspectHistoryElement from "./containers/ConspectHistoryElement";
 
+import "./ui/Sidebar.scss";
+
 import logo from "@assets/welcome-page/logo.svg";
 import priceIcon from "@assets/main-page/price-plan.svg";
 import settingsIcon from "@assets/main-page/settings.svg";

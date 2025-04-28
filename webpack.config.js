@@ -63,7 +63,7 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: './src/index.html', // Шаблон для HTML
+      template: './src/index.html',
     }),
     new Dotenv(),
   ]
